@@ -3,283 +3,1184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Виктория Кокурина | Нетипичный брокер по недвижимости</title>
-<meta name="description" content="Виктория Кокурина — нетипичный брокер по недвижимости в Москве. Новостройки, вторичка, коммерческая и загородная недвижимость. Васту-аудит планировок, энергокоучинг.">
-<meta name="keywords" content="недвижимость, брокер, Москва, новостройки, ипотека, Васту, аудит планировок, Виктория Кокурина">
-<link rel="canonical" href="https://vikaandreevnadesign.github.io/broker/">
-<meta property="og:title" content="Виктория Кокурина | Нетипичный брокер по недвижимости">
-<meta property="og:description" content="Подбираю пространство, которое работает на вас. Васту-аудит, безопасные сделки, сопровождение под ключ.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="vika-hero.jpg">
-<meta property="og:locale" content="ru_RU">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Виктория Кокурина","description":"Нетипичный брокер по недвижимости","telephone":"+79080288580","url":"https://vikaandreevnadesign.github.io/broker/","image":"vika-hero.jpg","address":{"@type":"PostalAddress","addressLocality":"Москва"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Виктория Кокурина — Риэлтор & Ваасту Консультант</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#F7F3ED;color:#2B2318;line-height:1.6;overflow-x:hidden}
-:root{--cream:#F7F3ED;--emerald:#0B2A24;--gold:#C4A24C;--gold-light:rgba(196,162,76,0.12);--dark:#2B2318;--muted:rgba(43,35,24,0.6)}
-h1,h2,h3{font-family:'Playfair Display',serif}
+  :root {
+    --deep: #1a0a2e;
+    --wine: #5c1a3a;
+    --gold: #c9963b;
+    --gold-light: #e8c47a;
+    --ivory: #f5efe4;
+    --cream: #faf6ef;
+    --emerald: #1d4a3a;
+    --muted: #8a7a6a;
+    --text: #2a1f18;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+  }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,243,237,0.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(196,162,76,0.15);transition:all 0.3s}
-.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--emerald);text-decoration:none;letter-spacing:0.5px}
-.nav-links{display:flex;gap:28px}
-.nav-links a{text-decoration:none;color:var(--muted);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-btn{background:var(--emerald);color:#fff;padding:9px 20px;border-radius:20px;text-decoration:none;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.3s;box-shadow:0 4px 14px rgba(11,42,36,0.2)}
-.nav-btn:hover{background:#0D3630;transform:translateY(-1px);box-shadow:0 8px 22px rgba(11,42,36,0.3)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;max-width:1200px;margin:0 auto;padding:120px 40px 70px}
-.hero-text{display:flex;flex-direction:column;gap:22px}
-.hero-badge{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;font-weight:500}
-.hero-badge::before{content:'';width:30px;height:1px;background:var(--gold)}
-.hero-text h1{font-size:clamp(42px,6vw,64px);font-weight:600;line-height:1.06;color:var(--dark);letter-spacing:-0.5px}
-.hero-text h1 em{font-style:italic;color:var(--gold)}
-.hero-desc{font-size:16px;color:var(--muted);line-height:1.85;max-width:470px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--emerald);color:#fff;padding:15px 32px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s;box-shadow:0 6px 22px rgba(11,42,36,0.25)}
-.btn-primary:hover{background:#0D3630;transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,42,36,0.35)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold);color:var(--gold);padding:15px 32px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.3s}
-.btn-outline:hover{background:var(--gold-light);transform:translateY(-2px)}
-.hero-photo{width:100%;max-width:430px;aspect-ratio:3/4;border-radius:4px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.18);justify-self:center;position:relative}
-.hero-photo::after{content:'';position:absolute;inset:0;border:1px solid rgba(196,162,76,0.25);border-radius:4px;pointer-events:none}
-.hero-photo img{width:100%;height:100%;object-fit:cover}
+  html { scroll-behavior: smooth; }
 
-/* SECTIONS */
-.sec{padding:80px 40px}
-.sec-container{max-width:1050px;margin:0 auto}
-.sec-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;font-weight:500}
-.sec-label::before{content:'';width:22px;height:1px;background:var(--gold)}
-.sec-title{font-size:clamp(28px,4vw,42px);font-weight:600;line-height:1.1;margin-bottom:40px;color:var(--dark);letter-spacing:-0.3px}
-.sec-title em{font-style:italic;color:var(--gold)}
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
 
-/* SERVICES */
-.sec-emerald{background:var(--emerald);color:#fff}
-.sec-emerald .sec-title{color:#fff}
-.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.srv-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:32px 24px;transition:all 0.4s;position:relative;overflow:hidden}
-.srv-card:hover{background:rgba(255,255,255,0.06);border-color:rgba(196,162,76,0.3);transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,0.3)}
-.srv-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.4s}
-.srv-card:hover::after{opacity:1}
-.srv-icon{width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--gold);font-size:14px;font-weight:700;transition:all 0.3s}
-.srv-card:hover .srv-icon{background:rgba(196,162,76,0.1)}
-.srv-card h4{font-size:16px;font-weight:600;margin-bottom:8px;color:#fff}
-.srv-card p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.7}
+  /* ── CURSOR ── */
+  body { cursor: none; }
+  #cursor {
+    position: fixed; top: 0; left: 0; z-index: 9999;
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform .15s ease, width .3s ease, height .3s ease, opacity .3s ease;
+  }
+  #cursor-ring {
+    position: fixed; top: 0; left: 0; z-index: 9998;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,150,59,.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform .4s cubic-bezier(.16,1,.3,1), width .3s, height .3s;
+  }
 
-/* MORTGAGE */
-.sec-cream{background:var(--cream)}
-.mortgage-block{background:#fff;border-radius:12px;padding:38px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.04);transition:all 0.3s}
-.mortgage-block:hover{box-shadow:0 8px 35px rgba(0,0,0,0.07)}
-.mortgage-block h3{font-size:22px;color:var(--dark);margin-bottom:12px}
-.mortgage-block p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px}
-.mortgage-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;margin-bottom:16px}
-.mortgage-list li{font-size:13px;color:var(--dark);padding:10px 16px;border-left:2px solid var(--gold);background:var(--gold-light);border-radius:0 4px 4px 0;transition:all 0.2s}
-.mortgage-list li:hover{background:rgba(196,162,76,0.18)}
-.calc-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.04);max-width:650px;margin:20px auto 0}
-.calc-card iframe{width:100%;height:390px;border:none}
-.calc-disclaimer{font-size:10px;color:var(--muted);text-align:center;margin-top:12px;opacity:0.7}
-.calc-tg{display:inline-flex;align-items:center;gap:6px;margin-top:14px;background:var(--emerald);color:#fff;padding:11px 24px;border-radius:24px;text-decoration:none;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.3s;box-shadow:0 4px 14px rgba(11,42,36,0.2)}
-.calc-tg:hover{background:#0D3630;transform:translateY(-2px);box-shadow:0 8px 22px rgba(11,42,36,0.3)}
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: transparent;
+    transition: background .5s, backdrop-filter .5s;
+  }
+  nav.scrolled {
+    background: rgba(26,10,46,.92);
+    backdrop-filter: blur(16px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ivory);
+    letter-spacing: .06em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex; gap: 2.4rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(245,239,228,.75);
+    text-decoration: none;
+    transition: color .3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width .3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
 
-/* VASTU & COACHING */
-.info-card{background:#fff;border-radius:12px;padding:36px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.04);text-align:center;transition:all 0.3s}
-.info-card:hover{box-shadow:0 8px 35px rgba(0,0,0,0.07)}
-.info-card h3{font-size:22px;color:var(--dark);margin-bottom:12px}
-.info-card p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px}
-.vastu-steps{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
-.vastu-step{flex:1;min-width:150px;background:var(--gold-light);padding:20px 16px;border-radius:8px;font-size:13px;color:var(--dark);transition:all 0.3s}
-.vastu-step:hover{background:rgba(196,162,76,0.2)}
-.vastu-step .vs-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);display:block;margin-bottom:6px;font-weight:600}
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background: var(--deep);
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      radial-gradient(ellipse 60% 80% at 65% 50%, rgba(92,26,58,.55) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(29,74,58,.4) 0%, transparent 60%);
+  }
+  /* Vastu mandala decoration */
+  .mandala-deco {
+    position: absolute; z-index: 1;
+    width: 420px; height: 420px;
+    top: 50%; right: 8%;
+    transform: translateY(-50%);
+    opacity: .06;
+    animation: slowSpin 60s linear infinite;
+  }
+  @keyframes slowSpin { to { transform: translateY(-50%) rotate(360deg); } }
 
-/* TOOLS */
-.sec-dark{background:var(--emerald);color:#fff}
-.sec-dark .sec-title{color:#fff}
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.tool-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:30px 22px;text-align:center;transition:all 0.4s;text-decoration:none;color:#fff;display:block;position:relative;overflow:hidden}
-.tool-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.35)}
-.tool-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.4s}
-.tool-card:hover::after{opacity:1}
-.tool-icon{width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--gold);font-size:16px;font-weight:700;transition:all 0.3s}
-.tool-card:hover .tool-icon{background:rgba(196,162,76,0.1)}
-.tool-card h4{font-size:15px;font-weight:600;margin-bottom:6px;color:var(--gold)}
-.tool-card p{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.5}
+  .hero-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 8rem 6rem;
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.8rem;
+  }
+  .eyebrow-line {
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+  .eyebrow-text {
+    font-size: .68rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ivory);
+    margin-bottom: .5rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: 300;
+    color: rgba(245,239,228,.6);
+    letter-spacing: .05em;
+    margin-bottom: 2.4rem;
+    font-style: italic;
+  }
+  .hero-usp {
+    max-width: 440px;
+    font-size: .92rem;
+    line-height: 1.9;
+    color: rgba(245,239,228,.75);
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+  }
+  .hero-usp strong {
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+  .hero-cta-row {
+    display: flex; gap: 1.2rem; flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: .9rem 2.4rem;
+    background: linear-gradient(135deg, var(--gold), #a0722a);
+    color: var(--deep);
+    font-family: var(--font-body);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none; cursor: none;
+    position: relative; overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,.15);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform .5s;
+  }
+  .btn-primary:hover::before { transform: translateX(120%) skewX(-15deg); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,150,59,.35); }
 
-/* CONTACTS */
-.sec-contacts{background:var(--cream);text-align:center}
-.contact-grid{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.social-btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:8px;text-decoration:none;color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-.social-btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.2)}
-.tg{background:#2AABEE}.wa{background:#25D366}.tel{background:var(--emerald)}.insta{background:linear-gradient(135deg,#833AB4,#E1306C)}
-.footer-note{font-size:10px;color:var(--muted);margin-top:30px;letter-spacing:0.1em;opacity:0.6}
+  .btn-ghost {
+    display: inline-block;
+    padding: .9rem 2.4rem;
+    background: transparent;
+    color: var(--ivory);
+    font-family: var(--font-body);
+    font-size: .72rem;
+    font-weight: 400;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(245,239,228,.3);
+    cursor: none;
+    transition: border-color .3s, color .3s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
-/* FADE */
-.fade-in{opacity:0;transform:translateY(22px);transition:opacity 0.7s,transform 0.7s}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+  .hero-photo-side {
+    position: relative; z-index: 2;
+    overflow: hidden;
+  }
+  .hero-photo-side img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: brightness(.9) contrast(1.05);
+    transform-origin: center;
+    animation: heroReveal 1.4s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes heroReveal {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0% 0 0); }
+  }
+  .hero-photo-side::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--deep) 0%, transparent 30%),
+                linear-gradient(to top, rgba(26,10,46,.6) 0%, transparent 40%);
+  }
+  /* photo ornament border */
+  .photo-frame {
+    position: absolute; z-index: 3;
+    top: 3rem; bottom: 3rem; right: 3rem; left: 1rem;
+    border: 1px solid rgba(201,150,59,.25);
+    pointer-events: none;
+  }
+  .photo-frame::before, .photo-frame::after {
+    content: '';
+    position: absolute;
+    width: 22px; height: 22px;
+    border-color: var(--gold);
+    border-style: solid;
+  }
+  .photo-frame::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+  .photo-frame::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
-/* MOBILE */
-@media(max-width:800px){
-  nav{padding:12px 18px}.nav-links{display:none}
-  .hero{grid-template-columns:1fr;padding:100px 18px 50px;text-align:center;gap:30px}
-  .hero-photo{max-width:280px;order:-1}
-  .hero-desc{max-width:100%}.hero-btns{justify-content:center}
-  .sec{padding:55px 18px}
-  .srv-grid{grid-template-columns:1fr 1fr}
-  .mortgage-list{grid-template-columns:1fr}
-  .tools-grid{grid-template-columns:1fr}
-  .calc-card iframe{height:330px}
-}
-@media(max-width:480px){
-  .srv-grid{grid-template-columns:1fr}
-  .social-btn{font-size:10px;padding:13px 18px}
-}
+  .hero-scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    z-index: 5;
+    display: flex; flex-direction: column; align-items: center; gap: .6rem;
+    color: rgba(245,239,228,.4);
+    font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+    animation: fadeInUp 1s 1.5s both;
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: .4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* ── VASTU SECTION ── */
+  .vastu {
+    position: relative;
+    padding: 8rem 6rem;
+    background: var(--deep);
+    overflow: hidden;
+  }
+  .vastu::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 80% 50%, rgba(92,26,58,.4) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 60% at 10% 30%, rgba(29,74,58,.3) 0%, transparent 55%);
+  }
+  .vastu-inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center;
+  }
+  .section-label {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
+  }
+  .section-label span { font-size: .65rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .section-label::before { content: ''; flex-shrink: 0; width: 30px; height: 1px; background: var(--gold); }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ivory);
+    margin-bottom: 2rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  .vastu-text {
+    font-size: .93rem;
+    line-height: 1.95;
+    color: rgba(245,239,228,.7);
+    font-weight: 300;
+  }
+  .vastu-text p + p { margin-top: 1.2rem; }
+  .vastu-text strong { color: var(--gold-light); font-weight: 400; }
+
+  /* Vastu compass diagram */
+  .vastu-diagram {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .compass-outer {
+    width: 340px; height: 340px;
+    border: 1px solid rgba(201,150,59,.2);
+    border-radius: 50%;
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .compass-outer::before {
+    content: '';
+    position: absolute; inset: 12px;
+    border: 1px solid rgba(201,150,59,.1);
+    border-radius: 50%;
+  }
+  .compass-inner {
+    width: 220px; height: 220px;
+    border: 1px solid rgba(201,150,59,.3);
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle, rgba(92,26,58,.3), transparent 70%);
+    display: flex; justify-content: center; align-items: center;
+  }
+  .compass-center {
+    width: 60px; height: 60px;
+    background: linear-gradient(135deg, var(--gold), var(--wine));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ivory);
+    font-style: italic;
+  }
+  .compass-tick {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform-origin: 0 0;
+    width: 1px;
+    background: rgba(201,150,59,.3);
+  }
+  .compass-dir {
+    position: absolute;
+    font-size: .6rem;
+    letter-spacing: .12em;
+    color: rgba(201,150,59,.7);
+    text-transform: uppercase;
+  }
+  .d-n { top: 8px; left: 50%; transform: translateX(-50%); }
+  .d-s { bottom: 8px; left: 50%; transform: translateX(-50%); }
+  .d-e { right: 8px; top: 50%; transform: translateY(-50%); }
+  .d-w { left: 8px; top: 50%; transform: translateY(-50%); }
+
+  /* Vastu grid inside inner circle */
+  .vastu-grid-svg {
+    position: absolute; inset: 0;
+    animation: slowSpin 80s linear infinite reverse;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 8rem 6rem;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .services::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,150,59,.06), transparent 70%);
+    pointer-events: none;
+  }
+  .services-header {
+    text-align: center;
+    max-width: 600px; margin: 0 auto 5rem;
+  }
+  .section-title-dark {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .section-title-dark em { font-style: italic; color: var(--wine); }
+  .section-sub {
+    font-size: .88rem;
+    line-height: 1.8;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(201,150,59,.12);
+  }
+  .service-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background .4s;
+  }
+  .service-card:hover { background: var(--ivory); }
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: linear-gradient(to right, var(--gold), var(--wine));
+    transition: width .5s cubic-bezier(.16,1,.3,1);
+  }
+  .service-card:hover::after { width: 100%; }
+  .service-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(201,150,59,.15);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .service-icon {
+    width: 42px; height: 42px;
+    margin-bottom: 1.4rem;
+    color: var(--gold);
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--deep);
+    margin-bottom: .8rem;
+    line-height: 1.2;
+  }
+  .service-desc {
+    font-size: .86rem;
+    line-height: 1.8;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* ── TOOLS / INSTRUMENTS ── */
+  .tools {
+    padding: 8rem 6rem;
+    background: linear-gradient(160deg, var(--emerald) 0%, #0d2a20 100%);
+    position: relative; overflow: hidden;
+  }
+  .tools::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9963b' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .tools-header {
+    text-align: center; max-width: 600px; margin: 0 auto 5rem;
+  }
+  .tools-header .section-title { color: var(--ivory); }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px; margin: 0 auto;
+  }
+  .tool-card {
+    position: relative;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(201,150,59,.2);
+    padding: 2.4rem;
+    display: flex; align-items: flex-start; gap: 1.5rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: border-color .3s, background .3s, transform .3s;
+  }
+  .tool-card:hover {
+    border-color: rgba(201,150,59,.6);
+    background: rgba(201,150,59,.06);
+    transform: translateY(-4px);
+  }
+  .tool-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 0;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    transition: height .4s;
+  }
+  .tool-card:hover::before { height: 100%; }
+  .tool-icon-wrap {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border: 1px solid rgba(201,150,59,.35);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+  }
+  .tool-info { flex: 1; }
+  .tool-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ivory);
+    margin-bottom: .4rem;
+  }
+  .tool-desc {
+    font-size: .8rem;
+    color: rgba(245,239,228,.55);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .tool-arrow {
+    position: absolute; bottom: 1.5rem; right: 1.5rem;
+    color: rgba(201,150,59,.4);
+    transition: color .3s, transform .3s;
+  }
+  .tool-card:hover .tool-arrow { color: var(--gold); transform: translate(3px,-3px); }
+
+  /* ── NEWBUILD SECTION ── */
+  .newbuild {
+    position: relative;
+    min-height: 70vh;
+    overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .newbuild-bg {
+    position: absolute; inset: 0;
+  }
+  .newbuild-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+    transition: transform 8s ease;
+  }
+  .newbuild:hover .newbuild-bg img { transform: scale(1.0); }
+  .newbuild-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right,
+      rgba(26,10,46,.9) 0%,
+      rgba(26,10,46,.7) 50%,
+      rgba(26,10,46,.3) 100%);
+  }
+  .newbuild-content {
+    position: relative; z-index: 1;
+    padding: 6rem 6rem;
+    max-width: 600px;
+  }
+  .newbuild-content .section-title { color: var(--ivory); }
+  .newbuild-text {
+    font-size: .92rem;
+    line-height: 1.9;
+    color: rgba(245,239,228,.72);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  /* ── ENERGY COACH ── */
+  .energy {
+    padding: 7rem 6rem;
+    background: var(--ivory);
+    position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center;
+  }
+  .energy::before {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(92,26,58,.07), transparent 70%);
+  }
+  .energy-visual {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .energy-symbol {
+    width: 280px; height: 280px;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .energy-ring {
+    position: absolute; border-radius: 50%;
+    border: 1px solid;
+    animation: energyPulse 4s ease-in-out infinite;
+  }
+  .energy-ring:nth-child(1) { inset: 0; border-color: rgba(92,26,58,.15); animation-delay: 0s; }
+  .energy-ring:nth-child(2) { inset: 20px; border-color: rgba(201,150,59,.2); animation-delay: .8s; }
+  .energy-ring:nth-child(3) { inset: 40px; border-color: rgba(92,26,58,.25); animation-delay: 1.6s; }
+  @keyframes energyPulse {
+    0%,100% { transform: scale(1); opacity: .7; }
+    50% { transform: scale(1.04); opacity: 1; }
+  }
+  .energy-core {
+    position: relative; z-index: 2;
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, var(--wine), var(--deep));
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 0 60px rgba(92,26,58,.3);
+  }
+  .energy-core-icon { font-size: 2rem; margin-bottom: .3rem; }
+  .energy-core-text {
+    font-size: .55rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .energy-content { position: relative; z-index: 1; }
+  .section-label-dark {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;
+  }
+  .section-label-dark::before { content: ''; flex-shrink: 0; width: 30px; height: 1px; background: var(--wine); }
+  .section-label-dark span { font-size: .65rem; letter-spacing: .28em; text-transform: uppercase; color: var(--wine); }
+
+  .energy-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    color: var(--deep);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+  .energy-title em { font-style: italic; color: var(--wine); }
+  .energy-text {
+    font-size: .9rem;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .btn-wine {
+    display: inline-block;
+    padding: .9rem 2.4rem;
+    background: linear-gradient(135deg, var(--wine), #3d1027);
+    color: var(--ivory);
+    font-family: var(--font-body);
+    font-size: .72rem; font-weight: 400;
+    letter-spacing: .18em; text-transform: uppercase;
+    text-decoration: none; cursor: none;
+    transition: transform .3s, box-shadow .3s;
+    border: none;
+  }
+  .btn-wine:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(92,26,58,.35); }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 8rem 6rem;
+    background: var(--deep);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(92,26,58,.4) 0%, transparent 65%);
+  }
+  .contact-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .contact .section-title { color: var(--ivory); margin-bottom: 1.5rem; }
+  .contact-sub {
+    font-size: .9rem; line-height: 1.85;
+    color: rgba(245,239,228,.6); margin-bottom: 3.5rem;
+  }
+  .contact-links {
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: .6rem;
+    color: rgba(245,239,228,.6);
+    text-decoration: none; font-size: .85rem;
+    letter-spacing: .05em;
+    transition: color .3s;
+  }
+  .contact-link:hover { color: var(--gold); }
+  .contact-link svg { flex-shrink: 0; }
+
+  .divider-gold {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 3rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 6rem;
+    background: #100718;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem; color: rgba(245,239,228,.4);
+    letter-spacing: .05em;
+  }
+  .footer-copy {
+    font-size: .7rem; color: rgba(245,239,228,.25);
+    letter-spacing: .1em;
+  }
+
+  /* ── ANIMATIONS ON SCROLL ── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .15s; }
+  .reveal-delay-2 { transition-delay: .3s; }
+  .reveal-delay-3 { transition-delay: .45s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-content { padding: 7rem 2rem 3rem; }
+    .hero-photo-side { height: 60vw; }
+    .vastu { padding: 5rem 2rem; }
+    .vastu-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .services { padding: 5rem 2rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .tools { padding: 5rem 2rem; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .newbuild-content { padding: 4rem 2rem; }
+    .energy { padding: 5rem 2rem; grid-template-columns: 1fr; gap: 3rem; }
+    .contact { padding: 5rem 2rem; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; gap: .8rem; text-align: center; }
+    .mandala-deco { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">Виктория Кокурина</a>
-  <div class="nav-links">
-    <a href="#services">Услуги</a>
-    <a href="#mortgage">Ипотека</a>
-    <a href="#vastu">Васту</a>
-    <a href="#tools">Материалы</a>
-    <a href="#contacts">Контакты</a>
-  </div>
-  <a href="#contacts" class="nav-btn">Связаться</a>
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">Виктория <span>Кокурина</span></a>
+  <ul class="nav-links">
+    <li><a href="#vastu">Васту</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#tools">Инструменты</a></li>
+    <li><a href="#newbuild">Новостройки</a></li>
+    <li><a href="#energy">Энергокоуч</a></li>
+    <li><a href="#contact">Контакт</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-text fade-in">
-    <div class="hero-badge">Нетипичный брокер по недвижимости</div>
-    <h1>Виктория<br><em>Кокурина</em></h1>
-    <p class="hero-desc">Я подбираю пространство, которое работает на вас. Пока рынок меняется, цены растут, а идеальные варианты уходят с витрины — я помогаю действовать спокойно и вовремя. Чтобы вы не смотрели вслед упущенной квартире, а жили в своей.</p>
-    <div class="hero-btns">
-      <a href="#contacts" class="btn-primary">Получить консультацию</a>
-      <a href="#services" class="btn-outline">Мои услуги</a>
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+
+  <!-- SVG Mandala -->
+  <svg class="mandala-deco" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="210" cy="210" r="200" stroke="white" stroke-width=".5"/>
+    <circle cx="210" cy="210" r="160" stroke="white" stroke-width=".5"/>
+    <circle cx="210" cy="210" r="120" stroke="white" stroke-width=".5"/>
+    <circle cx="210" cy="210" r="80" stroke="white" stroke-width=".5"/>
+    <circle cx="210" cy="210" r="40" stroke="white" stroke-width=".5"/>
+    <line x1="210" y1="10" x2="210" y2="410" stroke="white" stroke-width=".4"/>
+    <line x1="10" y1="210" x2="410" y2="210" stroke="white" stroke-width=".4"/>
+    <line x1="68" y1="68" x2="352" y2="352" stroke="white" stroke-width=".4"/>
+    <line x1="352" y1="68" x2="68" y2="352" stroke="white" stroke-width=".4"/>
+    <polygon points="210,50 350,150 350,270 210,370 70,270 70,150" stroke="white" stroke-width=".4" fill="none"/>
+    <polygon points="210,80 330,170 330,250 210,340 90,250 90,170" stroke="white" stroke-width=".4" fill="none"/>
+    <polygon points="210,140 280,190 280,230 210,280 140,230 140,190" stroke="white" stroke-width=".4" fill="none"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Риэлтор & Консультант по Васту</span>
+    </div>
+    <h1 class="hero-name">
+      Виктория<br><em>Кокурина</em>
+    </h1>
+    <p class="hero-title">Недвижимость в гармонии с энергией пространства</p>
+    <p class="hero-usp">
+      Помогаю найти жильё, которое станет источником силы и благополучия. 
+      Единственный риэлтор, который проводит <strong>глубокий разбор планировок по системе Васту</strong> — 
+      чтобы ваш дом поддерживал здоровье, финансы и отношения.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Получить консультацию</a>
+      <a href="#vastu" class="btn-ghost">Узнать о Васту</a>
     </div>
   </div>
-  <div class="hero-photo fade-in"><img src="vika-hero.jpg" alt="Виктория Кокурина"></div>
-</section>
 
-<!-- SERVICES -->
-<section class="sec sec-emerald" id="services">
-<div class="sec-container">
-  <div class="sec-label">Услуги</div>
-  <h2 class="sec-title">Чем я <em>помогаю</em></h2>
-  <div class="srv-grid">
-    <div class="srv-card fade-in"><div class="srv-icon">01</div><h4>Новостройки</h4><p>Подбор квартир от застройщиков Москвы. Скидки, акции, доступ к закрытым стартам продаж.</p></div>
-    <div class="srv-card fade-in"><div class="srv-icon">02</div><h4>Вторичный рынок</h4><p>Покупка и продажа квартир. Альтернативные сделки с полной юридической проверкой.</p></div>
-    <div class="srv-card fade-in"><div class="srv-icon">03</div><h4>Коммерческая</h4><p>Офисы, склады, помещения под бизнес. Анализ окупаемости и перспектив объекта.</p></div>
-    <div class="srv-card fade-in"><div class="srv-icon">04</div><h4>Загородная</h4><p>Дома, коттеджи, участки и ИЖС. Организую просмотр и проверку документов.</p></div>
+  <div class="hero-photo-side">
+    <img src="vika-hero.jpg" alt="Виктория Кокурина — риэлтор и консультант по Васту" loading="eager">
+    <div class="photo-frame"></div>
   </div>
-</div>
-</section>
 
-<!-- MORTGAGE -->
-<section class="sec sec-cream" id="mortgage">
-<div class="sec-container">
-  <div class="sec-label">Ипотека</div>
-  <h2 class="sec-title">Выгодные условия <em>для вас</em></h2>
-  <div class="mortgage-block fade-in">
-    <h3>Помощь в одобрении ипотеки</h3>
-    <p>Ипотека — это не страшно, когда её правильно подобрали. Я работаю с банками и застройщиками, чтобы ваша ставка была выгодной, а ежемесячный платёж — комфортным. Семейная, IT, военная ипотека, субсидии, рассрочки — разберём все варианты и подберём оптимальный под ваш случай.</p>
-    <ul class="mortgage-list">
-      <li>Семейная ипотека</li>
-      <li>IT-ипотека</li>
-      <li>Военная ипотека</li>
-      <li>Субсидии от застройщиков</li>
-      <li>Рассрочка</li>
-      <li>Рефинансирование</li>
-    </ul>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
   </div>
-  <h3 style="text-align:center;margin-top:36px;font-size:20px;color:var(--gold)">Ипотечный калькулятор</h3>
-  <div class="calc-card fade-in">
-    <iframe src="https://calcus.ru/kalkulyator-ipoteki?embed=1" title="Калькулятор ипотеки"></iframe>
-  </div>
-  <p class="calc-disclaimer">Расчёт является примерным и не является публичной офертой.</p>
-  <div style="text-align:center"><a href="https://t.me/kowiktori" class="calc-tg" target="_blank">Спросить про ипотеку</a></div>
-</div>
 </section>
 
 <!-- VASTU -->
-<section class="sec sec-cream" id="vastu">
-<div class="sec-container">
-  <div class="sec-label">Васту</div>
-  <h2 class="sec-title">Аудит планировок <em>по Васту</em></h2>
-  <div class="info-card fade-in">
-    <h3>Пространство, которое работает на вас</h3>
-    <p>Каждая планировка несёт свою энергию. Я анализирую пространство по принципам Васту и даю практические рекомендации: что усилить, что скорректировать, как сделать квартиру источником благополучия. Это не магия — это знание о том, как ваше пространство влияет на вашу жизнь. Пока работаю с новостройками — чтобы вы заехали в гармоничное пространство с первого дня.</p>
-    <div class="vastu-steps">
-      <div class="vastu-step"><span class="vs-num">1</span>Вы присылаете планировку</div>
-      <div class="vastu-step"><span class="vs-num">2</span>Я делаю разбор по Васту</div>
-      <div class="vastu-step"><span class="vs-num">3</span>Вы получаете рекомендации</div>
+<section class="vastu" id="vastu">
+  <div class="vastu-inner">
+    <div>
+      <div class="section-label"><span>Моё уникальное предложение</span></div>
+      <h2 class="section-title">Разбор планировок<br>по <em>Васту Шастра</em></h2>
+      <div class="vastu-text">
+        <p>
+          <strong>Васту Шастра</strong> — древняя индийская наука о гармонии пространства и энергии. 
+          Как риэлтор, я применяю её принципы при выборе квартиры или дома, 
+          чтобы каждое помещение работало на вас — а не против вас.
+        </p>
+        <p>
+          Вы получаете не просто квадратные метры, а пространство, в котором 
+          <strong>благоприятны энергии здоровья, финансов, отношений</strong> и личностного роста.
+          Это то, чего не предложит ни один другой риэлтор.
+        </p>
+        <p>
+          Я анализирую расположение комнат, направление входа, зоны элементов и секторов — 
+          и подбираю объекты, которые максимально соответствуют вашим целям и типу личности.
+        </p>
+      </div>
     </div>
-    <a href="#contacts" class="btn-primary">Заказать аудит</a>
+
+    <!-- Compass diagram -->
+    <div class="vastu-diagram reveal">
+      <div class="compass-outer">
+        <span class="compass-dir d-n">С</span>
+        <span class="compass-dir d-s">Ю</span>
+        <span class="compass-dir d-e">В</span>
+        <span class="compass-dir d-w">З</span>
+        <div class="compass-inner">
+          <!-- Vastu grid SVG -->
+          <svg class="vastu-grid-svg" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="73" x2="220" y2="73" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <line x1="0" y1="110" x2="220" y2="110" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <line x1="0" y1="147" x2="220" y2="147" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <line x1="73" y1="0" x2="73" y2="220" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <line x1="110" y1="0" x2="110" y2="220" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <line x1="147" y1="0" x2="147" y2="220" stroke="rgba(201,150,59,.15)" stroke-width=".8"/>
+            <circle cx="110" cy="110" r="50" stroke="rgba(201,150,59,.25)" stroke-width=".8" fill="none"/>
+            <circle cx="110" cy="110" r="25" stroke="rgba(201,150,59,.2)" stroke-width=".8" fill="none"/>
+          </svg>
+          <div class="compass-center">V</div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 
-<!-- COACHING -->
-<section class="sec sec-cream" id="coaching">
-<div class="sec-container">
-  <div class="sec-label">Энергокоучинг</div>
-  <h2 class="sec-title">Убрать страхи <em>и блоки</em></h2>
-  <div class="info-card fade-in">
-    <h3>Покупка без стресса</h3>
-    <p>Страх перед сделкой, сомнения в выборе, внутренние блоки — это нормально. Я помогаю разобрать эти состояния и подойти к покупке осознанно и спокойно. Энергокоучинг для тех, кто хочет не просто квартиру, а пространство своей силы.</p>
-    <a href="http://ya-est.ru/" class="btn-primary" target="_blank">Подробнее на ya-est.ru</a>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <div class="section-label" style="justify-content:center; margin-bottom:1rem;">
+      <span style="font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);">Услуги</span>
+    </div>
+    <h2 class="section-title-dark">Как я могу<br><em>помочь вам</em></h2>
+    <p class="section-sub">Комплексный подход к недвижимости — от поиска до сопровождения сделки</p>
   </div>
-</div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-num">01</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+        <path d="M9 21V12h6v9"/>
+      </svg>
+      <h3 class="service-name">Подбор&nbsp;недвижимости</h3>
+      <p class="service-desc">Поиск квартиры или дома с учётом ваших финансовых целей, образа жизни и принципов Васту. Только объекты с благоприятной энергетикой.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">02</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <line x1="12" y1="3" x2="12" y2="21"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/>
+        <line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/>
+      </svg>
+      <h3 class="service-name">Анализ по&nbsp;Васту</h3>
+      <p class="service-desc">Детальный разбор планировки: стороны света, расположение зон, вход. Рекомендации по улучшению любого пространства.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">03</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <path d="M9 12l2 2 4-4"/>
+        <path d="M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z"/>
+      </svg>
+      <h3 class="service-name">Сопровождение сделки</h3>
+      <p class="service-desc">Полная юридическая поддержка, переговоры, документы. Ваши интересы защищены на каждом этапе — от аванса до ключей.</p>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <h3 class="service-name">Новостройки</h3>
+      <p class="service-desc">Актуальная база новостроек. Помогаю выбрать застройщика, этаж, секцию и планировку с максимальным соответствием Васту.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">05</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      <h3 class="service-name">Продажа & обмен</h3>
+      <p class="service-desc">Оцениваю вашу недвижимость честно, выстраиваю правильный маркетинг и нахожу покупателя по лучшей цене в короткие сроки.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">06</div>
+      <svg class="service-icon" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+        <path d="M16 3.13a4 4 0 010 7.75"/>
+      </svg>
+      <h3 class="service-name">Онлайн-консультация</h3>
+      <p class="service-desc">Разберём вашу ситуацию, подберём стратегию, проанализируем любой объект по фото плана. Для клиентов по всей России.</p>
+    </div>
+  </div>
 </section>
 
 <!-- TOOLS -->
-<section class="sec sec-dark" id="tools">
-<div class="sec-container">
-  <div class="sec-label">Материалы</div>
-  <h2 class="sec-title">Полезные <em>инструменты</em></h2>
-  <div class="tools-grid">
-    <a href="https://v0-realtor-landing-page-eight.vercel.app/" class="tool-card fade-in" target="_blank">
-      <div class="tool-icon">&#9654;</div>
-      <h4>Гайд по новостройкам</h4>
-      <p>Всё, что нужно знать перед покупкой квартиры</p>
-    </a>
-    <a href="https://vikaandreevnadesign.github.io/cheklist/" class="tool-card fade-in" target="_blank">
-      <div class="tool-icon">&#9634;</div>
-      <h4>Чек-лист покупателя</h4>
-      <p>Пошаговый план действий для безопасной сделки</p>
-    </a>
-    <a href="https://v0-kokurina.vercel.app/" class="tool-card fade-in" target="_blank">
-      <div class="tool-icon">&#9679;</div>
-      <h4>Тест по недвижимости</h4>
-      <p>Что мешает именно вам купить квартиру?</p>
-    </a>
+<section class="tools" id="tools">
+  <div class="tools-header reveal">
+    <div class="section-label" style="justify-content:center; margin-bottom:1rem;">
+      <span>Инструменты & Ресурсы</span>
+    </div>
+    <h2 class="section-title">Полезные <em>инструменты</em></h2>
   </div>
-</div>
+
+  <div class="tools-grid">
+
+    <a href="guidepdf.html" class="tool-card reveal" target="_blank" rel="noopener">
+      <div class="tool-icon-wrap">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">Гид по Васту — PDF</div>
+        <div class="tool-desc">Руководство по анализу планировки по принципам Васту Шастра</div>
+      </div>
+      <svg class="tool-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a href="guide-pdf.html" class="tool-card reveal reveal-delay-1" target="_blank" rel="noopener">
+      <div class="tool-icon-wrap">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18"/>
+          <path d="M9 21V9"/>
+        </svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">Интерактивный гид</div>
+        <div class="tool-desc">Шаг за шагом: как самостоятельно оценить любую планировку</div>
+      </div>
+      <svg class="tool-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a href="https://v0-realtor-landing-page-eight.vercel.app/" class="tool-card reveal" target="_blank" rel="noopener">
+      <div class="tool-icon-wrap">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+          <path d="M9 21V12h6v9"/>
+        </svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">Подбор недвижимости</div>
+        <div class="tool-desc">Интерактивный инструмент для подбора квартиры по вашим параметрам</div>
+      </div>
+      <svg class="tool-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+    <a href="https://v0-kokurina.vercel.app/" class="tool-card reveal reveal-delay-1" target="_blank" rel="noopener">
+      <div class="tool-icon-wrap">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <line x1="12" y1="3" x2="12" y2="21"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/>
+          <line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/>
+        </svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">Анализ по Васту онлайн</div>
+        <div class="tool-desc">Загрузите план своей квартиры и получите первичный разбор по Васту</div>
+      </div>
+      <svg class="tool-arrow" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path d="M7 17L17 7M17 7H7M17 7v10"/>
+      </svg>
+    </a>
+
+  </div>
 </section>
 
-<!-- CONTACTS -->
-<section class="sec sec-contacts" id="contacts">
-<div class="sec-container">
-  <div class="sec-label" style="justify-content:center">Контакты</div>
-  <h2 class="sec-title" style="text-align:center">Свяжитесь со <em>мной</em></h2>
-  <div class="contact-grid fade-in">
-    <a href="https://t.me/kowiktori" class="social-btn tg" target="_blank">Telegram</a>
-    <a href="https://wa.me/79080288580" class="social-btn wa" target="_blank">WhatsApp</a>
-    <a href="tel:+79080288580" class="social-btn tel">Позвонить</a>
-    <a href="https://instagram.com/kowiktori" class="social-btn insta" target="_blank">Instagram</a>
+<!-- NEWBUILD -->
+<section class="newbuild" id="newbuild">
+  <div class="newbuild-bg">
+    <img src="foto.jpg" alt="Новостройки — подбор по Васту">
   </div>
-  <p style="color:var(--muted);font-size:11px;margin-top:16px;letter-spacing:0.08em;opacity:0.6">Москва</p>
-  <div class="footer-note">&copy; 2026 Виктория Кокурина | Нетипичный брокер по недвижимости</div>
-</div>
+  <div class="newbuild-overlay"></div>
+  <div class="newbuild-content">
+    <div class="section-label"><span>Новостройки</span></div>
+    <h2 class="section-title reveal">Квартиры<br>в новых <em>домах</em></h2>
+    <p class="newbuild-text reveal">
+      Работаю с актуальной базой новостроек. Помогу выбрать не только выгодный объект 
+      с точки зрения инвестиций, но и тот, который по расположению секций, этажей 
+      и ориентации окон будет максимально соответствовать принципам Васту.
+    </p>
+    <a href="#contact" class="btn-primary reveal">Подобрать новостройку</a>
+  </div>
 </section>
+
+<!-- ENERGY COACH -->
+<section class="energy" id="energy">
+  <div class="energy-visual reveal">
+    <div class="energy-symbol">
+      <div class="energy-ring"></div>
+      <div class="energy-ring"></div>
+      <div class="energy-ring"></div>
+      <div class="energy-core">
+        <div class="energy-core-icon">✦</div>
+        <div class="energy-core-text">Энерго<br>коучинг</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="energy-content reveal">
+    <div class="section-label-dark"><span>Для тех, кто застрял</span></div>
+    <h2 class="energy-title">Страхи и блоки<br>при <em>покупке/продаже</em></h2>
+    <p class="energy-text">
+      Иногда дело не в рынке и не в деньгах — а в том, что внутри не готово к переменам. 
+      Страх сделать ошибку, тревога перед большой суммой, блоки на изменения в жизни — 
+      всё это мешает двигаться вперёд.<br><br>
+      Как дипломированный энергокоуч, я помогаю проработать эти ограничения, 
+      чтобы сделка прошла из состояния ясности и уверенности — а новое пространство 
+      стало настоящим началом нового этапа.
+    </p>
+    <a href="http://ya-est.ru/" class="btn-wine" target="_blank" rel="noopener">
+      Перейти на сайт Энергокоуча →
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label" style="justify-content:center; margin-bottom:1.5rem;">
+      <span>Связаться со мной</span>
+    </div>
+    <h2 class="section-title reveal">Начнём вместе<br><em>ваш путь домой</em></h2>
+    <p class="contact-sub reveal">
+      Напишите или позвоните — обсудим ваш запрос, расскажу о подходе<br>
+      и проведём первичную консультацию совершенно бесплатно
+    </p>
+    <div class="divider-gold"></div>
+    <div class="contact-links reveal">
+      <a href="tel:+7XXXXXXXXXX" class="contact-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.1 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9a16 16 0 006.29 6.29l1.14-1.14a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        +7 (XXX) XXX-XX-XX
+      </a>
+      <a href="https://t.me/vkokurina" class="contact-link" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+        Telegram
+      </a>
+      <a href="https://wa.me/7XXXXXXXXXX" class="contact-link" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+    <a href="mailto:info@example.com" class="btn-primary reveal">Написать письмо</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Виктория Кокурина</div>
+  <div class="footer-copy">© 2025 · Риэлтор & Консультант по Васту</div>
+</footer>
 
 <script>
-const observer=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.12});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    rx += (mx - rx) * .12; ry += (my - ry) * .12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '18px'; cursor.style.height = '18px';
+      ring.style.width = '54px'; ring.style.height = '54px';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px'; cursor.style.height = '10px';
+      ring.style.width = '36px'; ring.style.height = '36px';
+    });
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: .15 });
+  reveals.forEach(r => io.observe(r));
+
+  // Hero content animation
+  document.querySelectorAll('.hero-content > *').forEach((el, i) => {
+    el.style.animation = `fadeInUp .8s ${.3 + i*.15}s both`;
+  });
 </script>
 </body>
 </html>
