@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Фон -->
+  <rect width="512" height="512" fill="#FFFFFF" rx="64"/>
+  
+  <!-- Акварельный размытый фон -->
+  <circle cx="256" cy="256" r="200" fill="#1A2B4C" opacity="0.1"/>
+  
+  <!-- Золотые геометрические линии -->
+  <line x1="100" y1="412" x2="412" y2="412" stroke="#D4AF37" stroke-width="3"/>
+  <line x1="256" y1="100" x2="256" y2="412" stroke="#D4AF37" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Буквы VK -->
+  <text x="256" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="200" font-weight="bold" fill="#1A2B4C" text-anchor="middle">VK</text>
+  
+  <!-- Золотой акцент под текстом -->
+  <circle cx="256" cy="340" r="8" fill="#D4AF37"/>
+</svg>
