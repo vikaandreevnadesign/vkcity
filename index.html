@@ -1,994 +1,433 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VK City — Твой компас в мире недвижимости</title>
-  <meta name="description" content="VK City — подбор недвижимости через призму гармонии, аналитики и личной энергии. Эксперт Виктория Кокурина."/>
-  <style>
-    /* ====== СБРОС И БАЗА ====== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #FFFFFF;
-      color: #1A2B4C;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-    button { cursor: pointer; border: none; font: inherit; }
-    :focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* ====== ЦВЕТОВАЯ ПАЛИТРА ====== */
-    :root {
-      --bg: #FFFFFF;
-      --text: #1A2B4C;
-      --gold: #D4AF37;
-      --gold-hover: #b8972b;
-      --blue-soft: #e8f0f7;
-      --shadow: 0 4px 20px rgba(26,43,76,0.08);
-      --radius: 12px;
-    }
+<title>VK City — Подбор недвижимости в Москве и ОАЭ | Виктория Кокурина</title>
+<meta name="description" content="VK City — премиальный подбор недвижимости от Виктории Кокуриной: новостройки, дома, коммерция, паркинги. 900+ девелоперов, 45+ банков, ипотека на индивидуальных условиях. Москва, Россия, ОАЭ.">
+<meta name="keywords" content="недвижимость Москва, подбор новостроек, ипотека, недвижимость ОАЭ, Виктория Кокурина, VK City, инвестиции в недвижимость, коммерческая недвижимость, паркинги, дистанционная сделка">
+<meta name="author" content="Виктория Кокурина, VK City">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vk-city.ru/">
 
-    /* ====== ФОНОВЫЕ АКВАРЕЛЬНЫЕ РАЗВОДЫ ====== */
-    .watercolor-bg {
-      position: relative;
-      overflow: hidden;
-    }
-    .watercolor-bg::before,
-    .watercolor-bg::after {
-      content: "";
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(ellipse at center, rgba(26,43,76,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .watercolor-bg::before {
-      top: -150px;
-      left: -150px;
-    }
-    .watercolor-bg::after {
-      bottom: -150px;
-      right: -150px;
-    }
-    .watercolor-bg > * { position: relative; z-index: 1; }
+<meta property="og:type" content="website">
+<meta property="og:title" content="VK City — Твой компас в мире недвижимости">
+<meta property="og:description" content="Премиальный подбор недвижимости через призму гармонии, аналитики и личной энергии.">
+<meta property="og:image" content="https://vk-city.ru/og-image.jpg">
+<meta property="og:url" content="https://vk-city.ru/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="VK City">
 
-    /* ====== ЗОЛОТЫЕ ГЕОМЕТРИЧЕСКИЕ ЛИНИИ ====== */
-    .geo-line {
-      position: absolute;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      height: 1px;
-      opacity: 0.4;
-    }
-    .geo-line.vertical {
-      width: 1px;
-      height: 100px;
-      background: linear-gradient(180deg, transparent, var(--gold), transparent);
-    }
-    .geo-decoration {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .geo-decoration svg {
-      position: absolute;
-      opacity: 0.3;
-    }
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VK City — Твой компас в мире недвижимости">
+<meta name="twitter:description" content="Премиальный подбор недвижимости от Виктории Кокуриной.">
 
-    /* ====== КОНТЕЙНЕР ====== */
-    .container {
-      width: min(1200px, 92vw);
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+<link rel="icon" type="image/png" href="IMG_20260526_180147_651.png">
+<link rel="apple-touch-icon" href="IMG_20260526_180147_651.png">
 
-    /* ====== КНОПКИ ====== */
-    .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: #fff;
-      padding: 16px 40px;
-      border-radius: 2px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-gold::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: left 0.5s;
-    }
-    .btn-gold:hover::before {
-      left: 100%;
-    }
-    .btn-gold:hover {
-      background: var(--gold-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-    }
-    .btn-gold:active { transform: translateY(0); }
-    .btn-gold[disabled] {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-    }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "VK City",
+  "description": "Премиальный подбор недвижимости",
+  "url": "https://vk-city.ru",
+  "telephone": "+7-908-028-85-80",
+  "founder": {"@type": "Person", "name": "Виктория Кокурина"},
+  "areaServed": ["Россия", "Москва", "ОАЭ"],
+  "sameAs": ["https://t.me/kowiktori"]
+}
+</script>
 
-    /* ====== ЗАГОЛОВКИ ====== */
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 300;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: var(--text);
-      letter-spacing: 2px;
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 16px auto 0;
-    }
-    .section-subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      text-align: center;
-      color: var(--text);
-      opacity: 0.85;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      font-weight: 300;
-      line-height: 1.8;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    /* ====== БЛОК 1: HERO (ATTENTION) ====== */
-    .hero {
-      padding: clamp(80px, 15vw, 120px) 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, rgba(26,43,76,0.03) 100%);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    @media (min-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-      }
-    }
-    .hero-content h1 {
-      font-size: clamp(2.2rem, 6vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      letter-spacing: 1px;
-    }
-    .hero-content .subtitle {
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
-      font-weight: 300;
-      margin-bottom: 2rem;
-      color: var(--text);
-      font-style: italic;
-      padding-left: 20px;
-      border-left: 3px solid var(--gold);
-    }
-    .hero-content p {
-      font-size: 1.05rem;
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-      opacity: 0.9;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-    .hero-compass {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .hero-compass img {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 10px 30px rgba(26,43,76,0.15));
-    }
+<!-- Calcus widget library -->
+<script src="https://calcus.ru/dist/widget.js"></script>
 
-    /* ====== БЛОК 2: GRID (INTEREST) ====== */
-    .services {
-      padding: clamp(80px, 12vw, 120px) 0;
-      position: relative;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-bottom: 4rem;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid rgba(212,175,55,0.2);
-      border-radius: var(--radius);
-      padding: 40px 30px;
-      text-align: center;
-      transition: all 0.4s ease;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(26,43,76,0.15);
-      border-color: var(--gold);
-    }
-    .service-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      fill: var(--text);
-      stroke: var(--gold);
-      stroke-width: 1.5;
-    }
-    .service-card h3 {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin: 16px 0 12px;
-      letter-spacing: 0.5px;
-    }
-    .service-card p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-    .geo-highlight {
-      background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(26,43,76,0.05));
-      border-left: 4px solid var(--gold);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 30px 35px;
-      font-weight: 300;
-      line-height: 1.9;
-      position: relative;
-    }
-    .geo-highlight::before {
-      content: "◆";
-      position: absolute;
-      top: 50%;
-      left: -8px;
-      transform: translateY(-50%);
-      color: var(--gold);
-      background: #fff;
-      width: 16px;
-      height: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-    }
-    @media (max-width: 599px) {
-      .geo-highlight {
-        border-left: none;
-        border-top: 4px solid var(--gold);
-        border-radius: var(--radius) var(--radius) 0 0;
-      }
-      .geo-highlight::before {
-        display: none;
-      }
-    }
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:#FFFFFF;color:#1A2B4C;line-height:1.6;overflow-x:hidden;position:relative}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;letter-spacing:-.3px}
+  img{max-width:100%;display:block}
 
-    /* ====== БЛОК 3: CALCULATOR ====== */
-    .calculator {
-      padding: clamp(80px, 12vw, 120px) 0;
-      background: linear-gradient(180deg, rgba(212,175,55,0.03), rgba(26,43,76,0.03));
-      position: relative;
-    }
-    .calcus-container {
-      max-width: 900px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 30px rgba(26,43,76,0.1);
-      border: 1px solid rgba(212,175,55,0.2);
-    }
-    .calcus-container iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: 8px;
-    }
-    @media (max-width: 767px) {
-      .calcus-container iframe {
-        height: 850px;
-      }
-      .calcus-container {
-        padding: 20px;
-      }
-    }
+  .watercolor-bg{position:fixed;inset:0;background:
+    radial-gradient(ellipse 600px 400px at 0% 15%,rgba(26,43,76,.10) 0%,transparent 60%),
+    radial-gradient(ellipse 500px 500px at 100% 35%,rgba(26,43,76,.08) 0%,transparent 55%),
+    radial-gradient(ellipse 700px 400px at 5% 75%,rgba(26,43,76,.07) 0%,transparent 60%),
+    radial-gradient(ellipse 500px 400px at 100% 90%,rgba(26,43,76,.06) 0%,transparent 55%);
+    z-index:-2;pointer-events:none}
 
-    /* ====== БЛОК 4: ADVANTAGES (DESIRE) ====== */
-    .advantages {
-      padding: clamp(80px, 12vw, 120px) 0;
-      position: relative;
-    }
-    .adv-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-bottom: 3rem;
-    }
-    .adv-item {
-      display: flex;
-      gap: 20px;
-      padding: 30px;
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(212,175,55,0.15);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    .adv-item::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 4px;
-      height: 0;
-      background: var(--gold);
-      transition: height 0.3s ease;
-    }
-    .adv-item:hover::after {
-      height: 100%;
-    }
-    .adv-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 8px 25px rgba(26,43,76,0.12);
-    }
-    .adv-icon {
-      flex: 0 0 56px;
-      width: 56px;
-      height: 56px;
-      background: rgba(212,175,55,0.1);
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-    .adv-content h4 {
-      font-size: 1.15rem;
-      font-weight: 500;
-      margin-bottom: 8px;
-      letter-spacing: 0.3px;
-    }
-    .adv-content p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      line-height: 1.7;
-      font-weight: 300;
-    }
-    .adv-note {
-      background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(26,43,76,0.05));
-      border: 1px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 25px 35px;
-      text-align: center;
-      font-weight: 400;
-      margin-top: 2rem;
-      position: relative;
-    }
-    .adv-note::before,
-    .adv-note::after {
-      content: "—";
-      color: var(--gold);
-      margin: 0 10px;
-    }
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;position:relative}
 
-    /* ====== БЛОК 5: FORM (ACTION) ====== */
-    .contact {
-      padding: clamp(80px, 12vw, 120px) 0;
-      background: linear-gradient(180deg, rgba(26,43,76,0.03), rgba(212,175,55,0.03));
-      position: relative;
-    }
-    .form-wrapper {
-      max-width: 650px;
-      margin: 0 auto;
-      background: #fff;
-      padding: clamp(30px, 6vw, 50px);
-      border-radius: var(--radius);
-      box-shadow: 0 8px 30px rgba(26,43,76,0.1);
-      border: 1px solid rgba(212,175,55,0.2);
-      position: relative;
-    }
-    .form-wrapper::before {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      bottom: 20px;
-      border: 1px solid rgba(212,175,55,0.1);
-      border-radius: 8px;
-      pointer-events: none;
-    }
-    .form-group {
-      margin-bottom: 22px;
-      position: relative;
-    }
-    .form-label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 400;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-    }
-    .form-input {
-      width: 100%;
-      padding: 16px 18px;
-      border: 1px solid rgba(26,43,76,0.2);
-      border-radius: 2px;
-      font-size: 1rem;
-      background: #fff;
-      color: var(--text);
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-    .form-input:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-      outline: none;
-    }
-    textarea.form-input {
-      min-height: 130px;
-      resize: vertical;
-    }
-    .form-submit {
-      width: 100%;
-      margin-top: 10px;
-    }
-    .form-note {
-      font-size: 0.85rem;
-      opacity: 0.7;
-      text-align: center;
-      margin-top: 20px;
-      font-weight: 300;
-    }
+  .gold-divider{display:flex;align-items:center;justify-content:center;margin:0 auto 30px;gap:12px}
+  .gold-divider .line{width:60px;height:1px;background:#D4AF37}
+  .gold-divider .diamond{width:8px;height:8px;background:#D4AF37;transform:rotate(45deg)}
 
-    /* ====== FOOTER ====== */
-    .footer {
-      padding: 60px 0 40px;
-      text-align: center;
-      background: linear-gradient(180deg, #fff, rgba(212,175,55,0.03));
-      border-top: 1px solid rgba(212,175,55,0.2);
-      position: relative;
-    }
-    .footer-slogan {
-      font-size: 1.5rem;
-      font-weight: 300;
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-    }
-    .footer-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 25px 0;
-      color: var(--gold);
-      font-size: 1rem;
-      user-select: none;
-    }
-    .footer-divider::before,
-    .footer-divider::after {
-      content: "";
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold));
-    }
-    .footer-divider::after {
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px 35px;
-      font-size: 1rem;
-      margin: 30px 0;
-    }
-    .footer-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 400;
-      letter-spacing: 0.3px;
-    }
-    .footer-links a:hover {
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-    .footer-requisites {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(212,175,55,0.15);
-      font-size: 0.85rem;
-      opacity: 0.7;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-    .footer-copy {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      opacity: 0.6;
-    }
+  .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#D4AF37 0%,#b8941f 100%);color:#FFF;padding:17px 42px;border:none;border-radius:50px;font-size:14px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .35s;text-decoration:none;text-transform:uppercase;box-shadow:0 6px 20px rgba(212,175,55,.35);font-family:'Inter',sans-serif}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,175,55,.5)}
+  .btn-gold:disabled{opacity:.7;cursor:not-allowed;transform:none}
 
-    /* ====== SVG ИКОНКИ ====== */
-    .icon {
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+  .section-title{font-size:clamp(30px,4.2vw,46px);text-align:center;margin-bottom:18px;line-height:1.15}
+  .section-subtitle{text-align:center;font-size:17px;color:#5a6a82;margin:0 auto 55px;max-width:780px;font-weight:300}
 
-    /* ====== УТИЛИТЫ ====== */
-    .text-center { text-align: center; }
-    .mb-1 { margin-bottom: 1rem; }
-    .mb-2 { margin-bottom: 2rem; }
-    .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0,0,0,0);
-      white-space: nowrap; border: 0;
-    }
+  .top-bar{position:absolute;top:0;left:0;width:100%;padding:22px 0;z-index:10}
+  .top-bar .container{display:flex;justify-content:space-between;align-items:center}
+  .top-logo{display:flex;align-items:center;gap:14px;color:#1A2B4C;text-decoration:none;font-family:'Playfair Display',serif;font-size:24px;font-weight:600;letter-spacing:2px}
+  .top-logo img{width:50px;height:50px;object-fit:contain}
+  .top-contact{color:#1A2B4C;text-decoration:none;font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+  .top-contact svg{width:18px;height:18px;fill:#D4AF37}
 
-    /* ====== АНИМАЦИИ ====== */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .service-card, .adv-item {
-      animation: fadeIn 0.6s ease-out;
-    }
-  </style>
+  .hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:12px;color:#D4AF37;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:22px}
+  .hero-eyebrow::before{content:"";width:30px;height:1px;background:#D4AF37}
+  .hero h1{font-size:clamp(38px,5.5vw,62px);line-height:1.08;margin-bottom:28px}
+  .hero h1 span{color:#D4AF37;font-style:italic}
+  .hero-subtitle{font-size:clamp(17px,1.7vw,20px);color:#3a4a66;margin-bottom:30px;font-style:italic;font-family:'Playfair Display',serif;line-height:1.5}
+  .hero-description{font-size:16px;color:#5a6a82;margin-bottom:40px;padding-left:22px;border-left:2px solid #D4AF37;font-weight:300}
+  .hero-image{display:flex;justify-content:center;align-items:center;position:relative}
+  .hero-image::before,.hero-image::after{content:"";position:absolute;border:1px solid #D4AF37;width:80px;height:80px}
+  .hero-image::before{top:-20px;left:-20px;border-right:none;border-bottom:none}
+  .hero-image::after{bottom:-20px;right:-20px;border-left:none;border-top:none}
+  .logo-frame{width:100%;max-width:420px;aspect-ratio:1/1;border-radius:16px;background:linear-gradient(135deg,#fcfcfc 0%,#fff 100%);box-shadow:0 25px 70px rgba(26,43,76,.15);display:flex;align-items:center;justify-content:center;padding:35px}
+
+  section{padding:110px 0;position:relative}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-bottom:60px}
+  .card{background:#FFF;padding:45px 30px;border-radius:16px;box-shadow:0 6px 30px rgba(26,43,76,.06);transition:all .4s;text-align:center;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
+  .card:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(26,43,76,.13)}
+  .card-icon{width:64px;height:64px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;border:1px solid #D4AF37;border-radius:50%;transform:rotate(45deg)}
+  .card-icon svg{width:30px;height:30px;fill:none;stroke:#1A2B4C;stroke-width:1.5;transform:rotate(-45deg)}
+  .card h3{font-size:22px;margin-bottom:12px}
+  .card p{color:#5a6a82;font-size:15px;font-weight:300}
+
+  .geo-block{background:linear-gradient(135deg,#1A2B4C 0%,#2a3d62 100%);color:#fff;padding:60px 50px;border-radius:20px;text-align:center;position:relative;overflow:hidden}
+  .geo-block::before{content:"";position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(212,175,55,.18) 0%,transparent 70%)}
+  .geo-block::after{content:"";position:absolute;inset:30px;border:1px solid rgba(212,175,55,.25);border-radius:12px;pointer-events:none}
+  .geo-block h3{font-size:30px;margin-bottom:18px;color:#D4AF37;position:relative}
+  .geo-block p{font-size:18px;line-height:1.7;position:relative;max-width:900px;margin:0 auto;font-weight:300}
+
+  .calc-section{background:linear-gradient(180deg,#fafbfd 0%,#fff 100%)}
+  .calcus-container{max-width:900px;width:100%;margin:0 auto;padding:30px;background:#fff;border-radius:16px;box-shadow:0 10px 40px rgba(26,43,76,.1);border:1px solid rgba(212,175,55,.2)}
+  #calcus-container{width:100%}
+
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+  .feature-block{background:#fff;padding:38px 30px;border-radius:16px;box-shadow:0 6px 25px rgba(26,43,76,.06);transition:all .35s;border-left:3px solid #D4AF37}
+  .feature-block:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(26,43,76,.13)}
+  .feature-number{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#D4AF37;margin-bottom:14px;line-height:1}
+  .feature-icon-wrap{width:54px;height:54px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;background:rgba(212,175,55,.1);border-radius:12px}
+  .feature-icon-wrap svg{width:28px;height:28px;fill:none;stroke:#1A2B4C;stroke-width:1.5}
+  .feature-block h4{font-size:20px;margin-bottom:12px}
+  .feature-block p{color:#5a6a82;font-size:15px;font-weight:300}
+  .free-notice{grid-column:1/-1;background:linear-gradient(135deg,#D4AF37 0%,#b8941f 100%);color:#fff;padding:40px;border-radius:16px;text-align:center;border-left:none;position:relative;overflow:hidden}
+  .free-notice::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.3);border-radius:10px}
+  .free-notice strong{font-family:'Playfair Display',serif;font-size:26px;display:block;margin-bottom:10px;position:relative}
+  .free-notice span{position:relative;font-weight:300}
+
+  .action-section{background:linear-gradient(135deg,#1A2B4C 0%,#0f1c36 100%);color:#fff;position:relative;overflow:hidden}
+  .action-section::before{content:"";position:absolute;top:-150px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.12) 0%,transparent 70%)}
+  .action-section::after{content:"";position:absolute;bottom:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(212,175,55,.08) 0%,transparent 70%)}
+  .action-section .section-title{color:#fff}
+  .action-section .section-subtitle{color:#b0b8c8}
+
+  .form-wrapper{max-width:620px;margin:0 auto;background:#fff;padding:50px 45px;border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.3);color:#1A2B4C;position:relative;z-index:1}
+  .form-group{margin-bottom:20px}
+  .form-group label{display:block;font-size:12px;font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+  .form-group input,.form-group textarea{width:100%;padding:15px 18px;border:1.5px solid #e0e4ec;border-radius:10px;font-size:15px;font-family:inherit;color:#1A2B4C;transition:all .3s;background:#fafbfd}
+  .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#D4AF37;background:#fff;box-shadow:0 0 0 4px rgba(212,175,55,.15)}
+  .form-group textarea{resize:vertical;min-height:110px}
+  .form-submit{width:100%;margin-top:10px}
+  .form-disclaimer{text-align:center;font-size:12px;color:#8a95a8;margin-top:18px}
+
+  footer{background:#0a1428;color:#b0b8c8;padding:70px 0 30px;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
+  .footer-logo{display:flex;justify-content:center;margin-bottom:25px}
+  .footer-logo img{max-width:130px;height:auto}
+  .footer-slogan{text-align:center;font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:35px;font-style:italic}
+  .footer-slogan .gold{color:#D4AF37;font-style:normal}
+  .footer-divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:30px 0}
+  .footer-divider .line{flex:1;max-width:200px;height:1px;background:rgba(212,175,55,.4)}
+  .footer-divider .diamond{width:8px;height:8px;background:#D4AF37;transform:rotate(45deg)}
+  .footer-contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:30px}
+  .footer-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border:1px solid rgba(212,175,55,.5);border-radius:50px;color:#fff;text-decoration:none;font-size:14px;font-weight:500;transition:all .3s}
+  .footer-btn:hover{background:#D4AF37;border-color:#D4AF37;transform:translateY(-2px)}
+  .footer-btn svg{width:18px;height:18px;fill:#D4AF37;transition:fill .3s}
+  .footer-btn:hover svg{fill:#fff}
+  .footer-legal{text-align:center;font-size:12px;color:#6a7488;line-height:1.8;padding-top:25px;border-top:1px solid rgba(255,255,255,.05);margin-top:35px}
+  .footer-legal p{margin-bottom:4px}
+
+  @media (max-width:768px){
+    .top-bar{padding:16px 0}
+    .top-logo{font-size:16px;letter-spacing:1px}
+    .top-logo img{width:38px;height:38px}
+    .top-contact span{display:none}
+    .hero{padding:110px 0 60px}
+    .hero-grid{grid-template-columns:1fr;text-align:center;gap:50px}
+    .hero-description{text-align:left}
+    .hero-eyebrow{justify-content:center}
+    .logo-frame{max-width:300px;padding:25px}
+    section{padding:70px 0}
+    .geo-block{padding:40px 25px}
+    .geo-block::after{inset:15px}
+    .geo-block h3{font-size:24px}
+    .geo-block p{font-size:16px}
+    .form-wrapper{padding:35px 25px}
+    .calcus-container{padding:20px}
+    .free-notice{padding:30px 20px}
+    .free-notice strong{font-size:22px}
+    .footer-contacts{flex-direction:column;align-items:stretch;padding:0 20px}
+    .footer-btn{justify-content:center}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ====== БЛОК 1: HERO (ATTENTION) ====== -->
-  <section class="hero watercolor-bg">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <h1>VK City — Твой компас в мире недвижимости</h1>
-          <p class="subtitle">Твой дом — это продолжение твоей энергии.<br>Выбирай пространство, в котором твои цели растут.</p>
-          <p>
-            Я — Виктория Кокурина, дипломированный психолог, энергокоуч и эксперт по недвижимости. 
-            Мой метод «Точка Сборки» соединяет аналитику рынка, принципы Васту и работу с личной энергией, 
-            чтобы вы нашли не просто квартиру, а место силы, где ваша жизнь обретает гармонию и направление.
-          </p>
-          <a href="#contact" class="btn-gold">Получить персональный подбор</a>
-        </div>
-        <div class="hero-compass">
-          <svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-            <!-- Акварельный фон -->
-            <defs>
-              <radialGradient id="watercolor1" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" style="stop-color:#1A2B4C;stop-opacity:0.4" />
-                <stop offset="100%" style="stop-color:#1A2B4C;stop-opacity:0" />
-              </radialGradient>
-              <radialGradient id="watercolor2" cx="30%" cy="40%" r="40%">
-                <stop offset="0%" style="stop-color:#1A2B4C;stop-opacity:0.3" />
-                <stop offset="100%" style="stop-color:#1A2B4C;stop-opacity:0" />
-              </radialGradient>
-              <radialGradient id="watercolor3" cx="70%" cy="60%" r="35%">
-                <stop offset="0%" style="stop-color:#1A2B4C;stop-opacity:0.35" />
-                <stop offset="100%" style="stop-color:#1A2B4C;stop-opacity:0" />
-              </radialGradient>
-            </defs>
-            
-            <!-- Акварельные разводы -->
-            <ellipse cx="250" cy="250" rx="200" ry="180" fill="url(#watercolor1)" opacity="0.6"/>
-            <ellipse cx="180" cy="220" rx="150" ry="140" fill="url(#watercolor2)" opacity="0.5"/>
-            <ellipse cx="320" cy="280" rx="140" ry="130" fill="url(#watercolor3)" opacity="0.5"/>
-            
-            <!-- Золотые геометрические линии -->
-            <g stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.6">
-              <circle cx="250" cy="250" r="180"/>
-              <circle cx="250" cy="250" r="160"/>
-              <circle cx="250" cy="250" r="140"/>
-              <circle cx="250" cy="250" r="120"/>
-              
-              <!-- Линии компаса -->
-              <line x1="250" y1="70" x2="250" y2="430"/>
-              <line x1="70" y1="250" x2="430" y2="250"/>
-              <line x1="144" y1="144" x2="356" y2="356"/>
-              <line x1="356" y1="144" x2="144" y2="356"/>
-              
-              <!-- Дополнительные линии -->
-              <line x1="250" y1="90" x2="250" y2="130"/>
-              <line x1="250" y1="370" x2="250" y2="410"/>
-              <line x1="90" y1="250" x2="130" y2="250"/>
-              <line x1="370" y1="250" x2="410" y2="250"/>
-            </g>
-            
-            <!-- Стрелка компаса -->
-            <g fill="#D4AF37" stroke="#D4AF37" stroke-width="2">
-              <polygon points="250,100 240,240 250,230 260,240"/>
-              <polygon points="250,400 240,260 250,270 260,260"/>
-              <polygon points="100,250 240,240 230,250 240,260"/>
-              <polygon points="400,250 260,240 270,250 260,260"/>
-            </g>
-            
-            <!-- Центр компаса -->
-            <circle cx="250" cy="250" r="15" fill="#D4AF37" stroke="#1A2B4C" stroke-width="2"/>
-            <circle cx="250" cy="250" r="8" fill="#1A2B4C"/>
-            
-            <!-- Буквы сторон света -->
-            <g fill="#D4AF37" font-family="Georgia, serif" font-size="20" text-anchor="middle">
-              <text x="250" y="65" font-weight="bold">N</text>
-              <text x="250" y="445" font-weight="bold">S</text>
-              <text x="55" y="257" font-weight="bold">W</text>
-              <text x="445" y="257" font-weight="bold">E</text>
-              <text x="135" y="130" font-size="14">NW</text>
-              <text x="365" y="130" font-size="14">NE</text>
-              <text x="135" y="375" font-size="14">SW</text>
-              <text x="365" y="375" font-size="14">SE</text>
-            </g>
-            
-            <!-- Декоративные элементы -->
-            <g stroke="#D4AF37" stroke-width="1" fill="none" opacity="0.4">
-              <line x1="250" y1="20" x2="250" y2="40"/>
-              <line x1="250" y1="460" x2="250" y2="480"/>
-              <line x1="20" y1="250" x2="40" y2="250"/>
-              <line x1="460" y1="250" x2="480" y2="250"/>
-            </g>
-          </svg>
+<div class="watercolor-bg"></div>
+
+<!-- Top bar -->
+<div class="top-bar">
+  <div class="container">
+    <a href="#" class="top-logo">
+      <img src="IMG_20260526_180147_651.png" alt="VK City logo">
+      <span>VK CITY</span>
+    </a>
+    <a href="tel:+79080288580" class="top-contact">
+      <svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>
+      <span>+7 908 028-85-80</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Премиальный подбор недвижимости</div>
+        <h1>VK City — Твой <span>компас</span> в мире недвижимости</h1>
+        <p class="hero-subtitle">Твой дом — это продолжение твоей энергии. Выбирай пространство, в котором твои цели растут.</p>
+        <p class="hero-description"><strong>Виктория Кокурина</strong> — эксперт по недвижимости, дипломированный психолог и энергокоуч. Я подбираю объекты через призму гармонии, точной аналитики рынка и вашей личной энергии — чтобы каждый квадратный метр работал на вас и приумножал ваш потенциал.</p>
+        <a href="#contact" class="btn-gold">Подобрать недвижимость</a>
+      </div>
+      <div class="hero-image">
+        <div class="logo-frame">
+          <img src="IMG_20260526_180147_651.png" alt="VK City — логотип с компасом Васту">
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== БЛОК 2: GRID (INTEREST) ====== -->
-  <section class="services watercolor-bg">
-    <div class="container">
-      <h2 class="section-title">Направления работы</h2>
-      <p class="section-subtitle">
-        Подбираю недвижимость, которая усиливает вашу энергию, а не истощает её. 
-        Каждый объект проходит фильтрацию через призму гармонии, аналитики и ваших личных целей.
-      </p>
+<!-- INTEREST -->
+<section>
+  <div class="container">
+    <div class="gold-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <h2 class="section-title">Направления подбора</h2>
+    <p class="section-subtitle">Каждое пространство имеет свою энергетику и инвестиционный потенциал. Мы работаем со всеми ключевыми сегментами рынка.</p>
 
-      <div class="services-grid">
-        <article class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24">
-            <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v9"/>
-          </svg>
-          <h3>Новостройки</h3>
-          <p>Подбор идеальных жилых комплексов с анализом локации, инфраструктуры и энергопотенциала.</p>
-        </article>
-        <article class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-          <h3>Дома и участки</h3>
-          <p>Загородная недвижимость для восстановления сил, гармонии с природой и семейного благополучия.</p>
-        </article>
-        <article class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-          </svg>
-          <h3>Коммерческая недвижимость</h3>
-          <p>Пространство для роста вашего бизнеса: офисы, помещения, где энергия работает на прибыль.</p>
-        </article>
-        <article class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24">
-            <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-            <circle cx="7" cy="17" r="2"/>
-            <path d="M9 17h6"/>
-            <circle cx="17" cy="17" r="2"/>
-          </svg>
-          <h3>Паркинги</h3>
-          <p>Комфорт и безопасность для вашего автомобиля — потому что детали тоже влияют на ваше состояние.</p>
-        </article>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg></div>
+        <h3>Новостройки</h3>
+        <p>Подбор идеальных жилых комплексов от ведущих застройщиков с учётом ваших целей и образа жизни.</p>
       </div>
-
-      <div class="geo-highlight">
-        <strong>География:</strong> Проведение сделок доступно по всей России (особый фокус на Москве) и в ряде международных направлений (включая ОАЭ). 
-        Возможность полностью дистанционной сделки — вы получаете экспертный подбор, не выходя из дома.
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v11h14V10M9 21v-6h6v6"/></svg></div>
+        <h3>Дома и участки</h3>
+        <p>Загородная недвижимость для восстановления сил, ресурсного состояния и жизни в гармонии с природой.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 21V5h6v16M14 21V9h6v12M7 9h.01M7 13h.01M7 17h.01M17 13h.01M17 17h.01"/></svg></div>
+        <h3>Коммерческая</h3>
+        <p>Пространство для роста вашего бизнеса: офисы, помещения, инвестиционные объекты с высокой ликвидностью.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 17h10M5 17V9l2-5h10l2 5v8M7 17v2H5v-2M19 17v2h-2v-2M8 13h8"/></svg></div>
+        <h3>Паркинги</h3>
+        <p>Комфорт и безопасность для вашего автомобиля — стратегический актив с понятной доходностью.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ====== БЛОК 3: CALCULATOR (INTEREST + DESIRE) ====== -->
-  <section class="calculator">
-    <div class="container">
-      <h2 class="section-title">Рассчитайте условия ипотеки</h2>
-      <p class="section-subtitle">
-        Через систему VK City доступно кредитование от 45+ ведущих банков России. 
-        Используйте удобный калькулятор, чтобы оценить бюджет и получить персональные условия.
-      </p>
-      <div class="calcus-container">
-        <iframe src="https://calcus.ru" title="Ипотечный калькулятор" loading="lazy"></iframe>
+    <div class="geo-block">
+      <h3>География сделок</h3>
+      <p>Проведение сделок доступно по всей России (особый фокус на Москве) и в ряде международных направлений, включая ОАЭ. Возможность полностью дистанционной сделки — от первой консультации до получения ключей.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section">
+  <div class="container">
+    <div class="gold-divider"><div class="line">
+</div><div class="diamond"></div><div class="line"></div></div>
+    <h2 class="section-title">Рассчитайте условия вашей ипотеки</h2>
+    <p class="section-subtitle">Через нашу систему доступно кредитование от 45+ ведущих банков. Подбираем индивидуальные условия и оптимальную ставку.</p>
+
+    <div class="calcus-container">
+      <div id="calcus-container"></div>
+      <script>
+        const options = {};
+        CalcusWidget.showMortgage(options);
+      </script>
+    </div>
+  </div>
+</section>
+
+<!-- DESIRE -->
+<section>
+  <div class="container">
+    <div class="gold-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <h2 class="section-title">Технологическое превосходство</h2>
+    <p class="section-subtitle">Доступ к закрытой профессиональной экосистеме, которая открывает возможности, недоступные обычному покупателю.</p>
+
+    <div class="features-grid">
+      <div class="feature-block">
+        <div class="feature-number">900+</div>
+        <h4>Девелоперов в базе</h4>
+        <p>Колоссальная база объектов от ведущих застройщиков, включая топовых федеральных игроков и эксклюзивные закрытые проекты.</p>
+      </div>
+      <div class="feature-block">
+        <div class="feature-number">45+</div>
+        <h4>Банков-партнёров</h4>
+        <p>Доступно ипотечное кредитование на индивидуальных условиях с лучшими ставками на рынке.</p>
+      </div>
+      <div class="feature-block">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
+        </div>
+        <h4>Снижение ставки и индивидуальные скидки</h4>
+        <p>Возможность оформления эксклюзивных скидок по ипотечной ставке прямо через нашу систему.</p>
+      </div>
+      <div class="feature-block">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
+        </div>
+        <h4>Программа Трейд-ин</h4>
+        <p>Удобный интегрированный инструмент быстрого обмена вашей старой квартиры на новую у множества застройщиков.</p>
+      </div>
+      <div class="feature-block">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 5-6"/></svg>
+        </div>
+        <h4>Оценка ликвидности и инвест-анализ</h4>
+        <p>Глубокое сравнение конкурентной среды строящихся рядом ЖК — для точного анализа инвестиционной привлекательности объекта.</p>
+      </div>
+      <div class="feature-block">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+        </div>
+        <h4>Энергетический матчинг</h4>
+        <p>Уникальный авторский подход: подбор объектов с учётом психологического портрета, целей и энергии клиента.</p>
+      </div>
+
+      <div class="free-notice">
+        <strong>100% бесплатно для вас</strong>
+        <span>Все услуги по подбору, аналитике и сопровождению сделок в новостройках полностью бесплатны — их оплачивают девелоперы.</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== БЛОК 4: ADVANTAGES (DESIRE) ====== -->
-  <section class="advantages watercolor-bg">
-    <div class="container">
-      <h2 class="section-title">Технологическое превосходство</h2>
-      <p class="section-subtitle">
-        Я работаю с инструментами, которые дают вам реальные преимущества: доступ к эксклюзивным объектам, 
-        индивидуальные условия и аналитику, которая экономит ваше время и деньги.
-      </p>
+<!-- ACTION -->
+<section class="action-section" id="contact">
+  <div class="container">
+    <div class="gold-divider"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+    <h2 class="section-title">Начнём ваш путь к новому пространству</h2>
+    <p class="section-subtitle">Оставьте заявку — я свяжусь с вами лично, проведу первичную консультацию и подберу варианты под ваш запрос и энергию.</p>
 
-      <div class="adv-grid">
-        <div class="adv-item">
-          <div class="adv-icon">900+</div>
-          <div class="adv-content">
-            <h4>Девелоперов в базе</h4>
-            <p>Доступна колоссальная база объектов от ведущих застройщиков, включая топовых федеральных игроков и эксклюзивные закрытые проекты.</p>
-          </div>
+    <div class="form-wrapper">
+      <div data-fs-error style="display:none;color:red;margin-bottom:15px;">Произошла ошибка, попробуйте еще раз.</div>
+      <form id="vk-city-form">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" data-fs-field="name" placeholder="Как к вам обращаться">
         </div>
-        <div class="adv-item">
-          <div class="adv-icon">45+</div>
-          <div class="adv-content">
-            <h4>Банков-партнеров</h4>
-            <p>Доступно ипотечное кредитование на индивидуальных условиях. Помогаю выбрать оптимальную программу под вашу ситуацию.</p>
-          </div>
+        <div class="form-group">
+          <label for="phone">Телефон *</label>
+          <input type="tel" id="phone" name="phone" data-fs-field="phone" required placeholder="+7 (___) ___-__-__">
         </div>
-        <div class="adv-item">
-          <div class="adv-icon">−0,5%</div>
-          <div class="adv-content">
-            <h4>Снижение ставки</h4>
-            <p>Возможность оформления эксклюзивных скидок по ипотечной ставке прямо через нашу систему — экономия сотен тысяч рублей.</p>
-          </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" data-fs-field="email" placeholder="your@email.com">
         </div>
-        <div class="adv-item">
-          <div class="adv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 4 23 10 17 10"/>
-              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-            </svg>
-          </div>
-          <div class="adv-content">
-            <h4>Программа Трейд-ин</h4>
-            <p>Удобный интегрированный инструмент быстрого обмена вашей старой квартиры на новую у множества застройщиков.</p>
-          </div>
+        <div class="form-group">
+          <label for="message">Комментарий / запрос</label>
+          <textarea id="message" name="message" data-fs-field="message" placeholder="Расскажите о ваших целях, бюджете, пожеланиях..."></textarea>
         </div>
-        <div class="adv-item">
-          <div class="adv-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-          </div>
-          <div class="adv-content">
-            <h4>Оценка ликвидности</h4>
-            <p>Функция глубокого сравнения конкурентной среды строящихся рядом ЖК для точного анализа инвестиционной привлекательности.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="adv-note">
-        Все услуги по подбору, аналитике и сопровождению сделок в новостройках для вас 100% бесплатны (их оплачивают девелоперы)
-      </div>
+        <button type="submit" class="btn-gold form-submit" data-fs-submit-btn>Отправить заявку</button>
+        <p class="form-disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ====== БЛОК 5: FORM (ACTION) ====== -->
-  <section id="contact" class="contact watercolor-bg">
-    <div class="container">
-      <h2 class="section-title">Найдите пространство для роста</h2>
-      <p class="section-subtitle">
-        Оставьте заявку — я свяжусь с вами, чтобы обсудить ваши цели и подобрать варианты, 
-        которые будут работать именно на вас.
-      </p>
-
-      <div class="form-wrapper">
-        <form id="vk-city-form" novalidate>
-          <div data-fs-success style="display:none; color: #1A2B4C; background: #eef2fa; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-weight: 500;">
-            Спасибо! Ваша заявка успешно отправлена. Виктория свяжется с вами в ближайшее время.
-          </div>
-          <div data-fs-error style="display:none; color: #c00; margin-bottom: 15px; font-weight: 500;">
-            Произошла ошибка, попробуйте еще раз.
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="name">Ваше имя</label>
-            <input class="form-input" type="text" id="name" name="name" data-fs-field placeholder="Как к вам обращаться?" autocomplete="name">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="phone">Телефон <span style="color:#c00;">*</span></label>
-            <input class="form-input" type="tel" id="phone" name="phone" data-fs-field required placeholder="+7 (___) ___-__-__" autocomplete="tel">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="email" id="email" name="email" data-fs-field placeholder="example@mail.ru" autocomplete="email">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="message">Ваш запрос / комментарий</label>
-            <textarea class="form-input" id="message" name="message" data-fs-field placeholder="Расскажите, что вы ищете: локация, бюджет, тип недвижимости..."></textarea>
-          </div>
-
-          <button class="btn-gold form-submit" type="submit" data-fs-submit-btn>
-            Отправить заявку
-          </button>
-
-          <p class="form-note">
-            Нажимая кнопку, вы соглашаетесь с обработкой персональных данных. 
-            Ваши данные защищены и не передаются третьим лицам.
-          </p>
-        </form>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">
+      <img src="IMG_20260526_180147_651.png" alt="VK City">
     </div>
-  </section>
+    <p class="footer-slogan"><span class="gold">VK City</span> — Твой компас в мире недвижимости</p>
 
-  <!-- ====== FOOTER ====== -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-slogan">VK City — Твой компас в мире недвижимости</p>
-      <div class="footer-divider"></div>
-      <div class="footer-links">
-        <a href="https://wa.me/79080288580" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-          </svg>
-          WhatsApp
-        </a>
-        <a href="https://t.me/kowiktori" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24">
-            <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.6a2.25 2.25 0 0 0 .127 4.232l4.125 1.375 1.65 4.95a2.25 2.25 0 0 0 3.717.792l3.3-3.3 4.95 1.65a2.25 2.25 0 0 0 2.892-2.475l-2.475-13.2a2.25 2.25 0 0 0-1.369-1.839z"/>
-          </svg>
-          Telegram @kowiktori
-        </a>
-        <a href="tel:+79080288580">
-          <svg class="icon" viewBox="0 0 24 24">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          +7 (908) 028-85-80
-        </a>
-        <a href="https://vk-city.ru" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-          vk-city.ru
-        </a>
-      </div>
-      <div class="footer-requisites">
-        <p>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ КОКУРИНА ВИКТОРИЯ АНДРЕЕВНА</p>
-        <p>ИНН 761101173810</p>
-        <p>ОГРНИП 325762700032112</p>
-      </div>
-      <p class="footer-copy">© 2026 VK City. Все права защищены.</p>
+    <div class="footer-divider">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="diamond"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
     </div>
-  </footer>
 
-  <!-- ====== FORMSPREE INIT ====== -->
-  <script>
-    // Formspree Ajax integration via CDN
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#vk-city-form', formId: 'mpqnowoo' });
-  </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <div class="footer-contacts">
+      <a href="https://wa.me/79080288580" target="_blank" rel="noopener" class="footer-btn" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.3 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.3 2 3 4.8 4.2 1.8.8 2.5.9 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.9 3.3 1.4 5.2 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.4-.5-4.8-1.4l-.3-.2-3 .9.9-2.9-.2-.3C3.5 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/kowiktori" target="_blank" rel="noopener" class="footer-btn" aria-label="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M21.5 4.5L2.7 11.8c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5L18.4 7.7c.5-.3 1-.1.6.2l-9.1 8.2-.3 4.9c.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.9l3.3-15.4c.3-1.4-.5-2-1.6-1.1z"/></svg>
+        Telegram
+      </a>
+      <a href="https://t.me/kowiktori" target="_blank" rel="noopener" class="footer-btn" aria-label="Telegram @kowiktori">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.6 7l-1.5 7.1c-.1.5-.4.6-.8.4l-2.3-1.7-1.1 1.1c-.1.1-.2.2-.5.2l.2-2.4 4.4-4c.2-.2 0-.3-.3-.1L9 12.8 6.7 12c-.5-.2-.5-.5.1-.7l9-3.5c.4-.2.8.1.8.7z"/></svg>
+        @kowiktori
+      </a>
+      <a href="tel:+79080288580" class="footer-btn" aria-label="Телефон">
+        <svg viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>
+        +7 908 028-85-80
+      </a>
+      <a href="https://vk-city.ru" target="_blank" rel="noopener" class="footer-btn" aria-label="Сайт">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 17.9c-3.9-.5-7-3.8-7-7.9 0-.6.1-1.2.2-1.8L9 15v1c0 1.1.9 2 2 2v1.9zm6.9-2.5c-.3-.8-1-1.4-1.9-1.4h-1v-3c0-.6-.4-1-1-1H8v-2h2c.6 0 1-.4 1-1V7h2c1.1 0 2-.9 2-2v-.4c2.9 1.2 5 4.1 5 7.4 0 2.1-.8 4-2.1 5.4z"/></svg>
+        vk-city.ru
+      </a>
+    </div>
 
-  <!-- ====== ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ (Vanilla JS) ====== -->
-  <script>
-    // Плавный скролл для якорных ссылок
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href.length > 1) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    });
+    <div class="footer-divider">
+      <div class="line"></div>
+      <div class="diamond"></div>
+      <div class="line"></div>
+    </div>
 
-    // Валидация телефона (маска)
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-      phoneInput.addEventListener('input', function() {
-        let value = this.value.replace(/\D/g, '');
-        if (value.length > 0) {
-          if (value[0] === '7' || value[0] === '8') {
-            value = value.slice(1);
-          }
-          let formattedValue = '+7';
-          if (value.length > 0) formattedValue += ' (' + value.slice(0, 3);
-          if (value.length >= 3) formattedValue += ') ' + value.slice(3, 6);
-          if (value.length >= 6) formattedValue += '-' + value.slice(6, 8);
-          if (value.length >= 8) formattedValue += '-' + value.slice(8, 10);
-          this.value = formattedValue;
-        }
-      });
-    }
+    <div class="footer-legal">
+      <p>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ КОКУРИНА ВИКТОРИЯ АНДРЕЕВНА</p>
+      <p>ИНН: 761101173810 &nbsp;·&nbsp; ОГРНИП: 325762700032112</p>
+      <p style="margin-top:12px;">© 2026 VK City. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
 
-    // Обработка отправки формы
-    const form = document.getElementById('vk-city-form');
-    const submitBtn = form?.querySelector('[data-fs-submit-btn]');
-    const successMsg = form?.querySelector('[data-fs-success]');
-    const errorMsg = form?.querySelector('[data-fs-error]');
+<!-- Formspree -->
+<script>
+  window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments)};
+  formspree('initForm', { formElement: 'vk-city-form', formId: 'mpqnowoo' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
-    if (form && submitBtn) {
-      form.addEventListener('submit', function() {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-      });
-
-      const observer = new MutationObserver(() => {
-        if (successMsg?.style.display === 'block' || errorMsg?.style.display === 'block') {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Отправить заявку';
-          if (successMsg?.style.display === 'block') {
-            form.reset();
-          }
-        }
-      });
-      if (successMsg || errorMsg) {
-        observer.observe(form, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
-      }
-    }
-  </script>
 </body>
 </html>
+
+      
