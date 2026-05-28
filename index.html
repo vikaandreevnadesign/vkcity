@@ -74,7 +74,7 @@
             align-items: center;
             justify-content: space-between;
         }
-        .header-logo img { height: 32px; width: auto; }
+        .header-logo img { height: 44px; width: auto; }
         .header-actions {
             display: flex;
             align-items: center;
@@ -96,16 +96,23 @@
             color: var(--gold);
         }
         .header-actions a svg { width: 15px; height: 15px; }
-        .header-phone {
-            font-size: 13px;
-            font-weight: 500;
+        .header-phone-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
             color: var(--ink);
             text-decoration: none;
-            letter-spacing: 0.3px;
-            border-bottom: 1px solid transparent;
-            transition: var(--transition);
         }
-        .header-phone:hover { border-bottom-color: var(--gold); color: var(--gold); }
+        .header-phone-icon:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .header-phone-icon svg { width: 15px; height: 15px; }
 
         .container {
             max-width: var(--max-width);
@@ -391,6 +398,12 @@
         }
         .services-grid {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 36px;
+        }
+        .services-grid-paid {
+            display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 14px;
             margin-bottom: 36px;
@@ -479,6 +492,7 @@
             font-weight: 700;
             color: var(--gold);
             margin: 0 auto 12px;
+            flex-shrink: 0;
         }
         .process-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
         .process-step p { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
@@ -537,10 +551,10 @@
         }
 
         /* ===== КОНТАКТЫ ===== */
-        .contact-grid {
+        .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             align-items: start;
             margin-top: 28px;
         }
@@ -633,15 +647,36 @@
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 900px) {
-            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero { position: relative; }
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
             .hero-subtitle { max-width: 100%; }
-            .hero-list { align-items: center; }
+            .hero-list { align-items: flex-start; display: inline-flex; flex-direction: column; }
             .hero-buttons, .hero-contacts { justify-content: center; }
-            .hero-visual { display: none; }
+            .hero-visual {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                opacity: 0.12;
+            }
+            .hero-visual img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                max-height: none;
+                border-radius: 0;
+            }
             .why-grid { grid-template-columns: 1fr; }
             .about-me-block { grid-template-columns: 1fr; text-align: center; }
             .about-me-photo { margin: 0 auto; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .contact-layout { grid-template-columns: 1fr; gap: 30px; }
 
             .process-timeline { flex-direction: column; gap: 0; }
             .process-timeline::before { display: none; }
@@ -654,7 +689,16 @@
                 border-bottom: 1px solid var(--border-subtle);
             }
             .process-step:last-child { border-bottom: none; }
-            .process-num { margin: 0; width: 42px; height: 42px; font-size: 17px; }
+            .process-num {
+                margin: 0;
+                width: 42px;
+                height: 42px;
+                font-size: 17px;
+                flex-shrink: 0;
+            }
+
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid-paid { grid-template-columns: 1fr; }
 
             .container { padding: 0 18px; }
             section { padding: 60px 0; }
@@ -689,7 +733,9 @@
             <a href="https://wa.me/79080288580" target="_blank" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.106c-.229.647-1.347 1.852-1.847 1.982-.452.118-1.032.267-2.021-.355-2.114-1.328-3.559-3.506-3.673-3.669-.114-.163-.878-1.168-.878-2.227 0-1.059.557-1.579.755-1.795.198-.216.432-.27.576-.27.144 0 .288.007.415.015.133.008.311.01.468.358.186.414.636 1.55.693 1.663.057.112.095.243.019.391-.076.148-.114.24-.229.37-.115.13-.241.291-.345.391-.115.114-.235.238-.101.463.134.225.597.984 1.28 1.594.879.784 1.619 1.026 1.849 1.14.23.115.365.096.5-.057.135-.154.577-.673.731-.904.154-.231.308-.193.519-.116.211.077 1.336.63 1.565.745.229.114.381.172.437.267.056.096.056.554-.173 1.201z"/></svg>
             </a>
-            <a href="tel:+79080288580" class="header-phone">+7 908 028 85 80</a>
+            <a href="tel:+79080288580" class="header-phone-icon" aria-label="Телефон">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57.1.31.03.67-.24 1.01l-2.21 2.21z"/></svg>
+            </a>
         </div>
     </div>
 </header>
@@ -768,6 +814,14 @@
                     <line x1="197" y1="10" x2="197" y2="290" stroke="#C9A86A" stroke-width="0.5" stroke-dasharray="4,6" />
                     <circle cx="150" cy="150" r="14" stroke="#C9A86A" stroke-width="1" fill="rgba(201,168,106,0.04)" />
                     <text x="150" y="155" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" fill="#C9A86A" font-weight="500">ЦЕНТР</text>
+                    <text x="150" y="55" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" fill="#C9A86A" font-weight="500">СЕВЕР</text>
+                    <text x="150" y="275" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" fill="rgba(201,168,106,0.5)" font-weight="500">ЮГ</text>
+                    <text x="52" y="155" text-anchor="middle" font-family="Manrope, sans-serif" font-size="7" fill="rgba(201,168,106,0.5)" font-weight="500">ЗАПАД</text>
+                    <text x="248" y="155" text-anchor="middle" font-family="Manrope, sans-serif" font-size="7" fill="rgba(201,168,106,0.5)" font-weight="500">ВОСТОК</text>
+                    <text x="52" y="55" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" fill="rgba(201,168,106,0.4)" font-weight="500">С-З</text>
+                    <text x="248" y="55" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" fill="rgba(201,168,106,0.4)" font-weight="500">С-В</text>
+                    <text x="52" y="275" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" fill="rgba(201,168,106,0.4)" font-weight="500">Ю-З</text>
+                    <text x="248" y="275" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" fill="rgba(201,168,106,0.4)" font-weight="500">Ю-В</text>
                 </svg>
             </div>
         </div>
@@ -848,7 +902,7 @@
 
         <div class="services-section">
             <h3>Дополнительные услуги</h3>
-            <div class="services-grid">
+            <div class="services-grid-paid">
                 <div class="service-card">
                     <span class="tag tag-paid">Платно</span>
                     <h4>Васту-разбор квартиры</h4>
@@ -884,8 +938,15 @@
     </div>
 </section>
 
+<!-- ===== БРЕНД-БЛОК ===== -->
+<section class="section-ivory">
+    <div class="container" style="text-align:center;">
+        <img src="IMG_20260526_182153_529.png" alt="VK CITY — Васту компас" style="max-width:550px;width:100%;height:auto;border-radius:var(--radius);">
+    </div>
+</section>
+
 <!-- ===== ПРОЦЕСС ===== -->
-<section class="section-ivory" id="process">
+<section class="section-white" id="process">
     <div class="container">
         <div class="section-tag">Процесс</div>
         <h2 class="section-title">Как проходит работа</h2>
@@ -924,7 +985,7 @@
 </section>
 
 <!-- ===== ABOUT ME ===== -->
-<section class="section-white" id="about-me">
+<section class="section-ivory" id="about-me">
     <div class="container">
         <div class="about-me-block">
             <div class="about-me-photo">
@@ -958,7 +1019,7 @@
         <div class="section-tag">Связаться</div>
         <h2 class="section-title">Оставьте заявку</h2>
         <div class="gold-line"></div>
-        <div class="contact-grid">
+        <div class="contact-layout">
             <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpqnowoo" method="POST">
                 <div class="form-group">
                     <label for="name">Имя</label>
@@ -1003,13 +1064,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- ===== БРЕНД-БЛОК ===== -->
-<section class="section-white">
-    <div class="container" style="text-align:center;">
-        <img src="IMG_20260526_182153_529.png" alt="VK CITY — Васту компас" style="max-width:550px;width:100%;height:auto;border-radius:var(--radius);">
     </div>
 </section>
 
