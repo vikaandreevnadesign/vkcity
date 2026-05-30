@@ -565,7 +565,7 @@
 <header class="header">
     <div class="container">
         <a href="#" class="header-logo">
-            <img src="IMG_20260526_180147_651.png" alt="VK City">
+            <img src="partner/logo.png" alt="VK City">
         </a>
         <nav class="header-nav">
             <a href="#about">О программе</a>
@@ -595,7 +595,7 @@
 <!-- HERO -->
 <section class="hero" id="hero">
     <div class="hero-bg">
-        <img src="gorodfoto.png" alt="Москва">
+        <img src="../gorodfoto.png" alt="Москва">
     </div>
     <div class="container">
         <div>
@@ -802,7 +802,6 @@
 
 <script>
 (function() {
-    // Мобильное меню
     var toggle = document.getElementById('mobileToggle');
     var menu = document.getElementById('mobileMenu');
     var closeBtn = document.getElementById('closeMenu');
@@ -813,7 +812,6 @@
         link.addEventListener('click', function() { menu.classList.remove('active'); });
     });
 
-    // Плавный скролл
     document.querySelectorAll('a[href^="#"]').forEach(function(link) {
         link.addEventListener('click', function(e) {
             var target = document.querySelector(this.getAttribute('href'));
@@ -826,7 +824,6 @@
         });
     });
 
-    // Форма
     var form = document.getElementById('partnerForm');
     var success = document.getElementById('formSuccess');
 
